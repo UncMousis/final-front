@@ -6,7 +6,13 @@ function HabitItem({ habit, onDelete }) {
       <h3>
         {habit.title} {habit.completed ? "✅" : "❌"}
       </h3>
-      <p>📅 Target Date: {habit.targetDate}</p>
+      <p>
+        📅 Target Date:{" "}
+        {habit.target_date
+          ? new Date(habit.target_date).toLocaleDateString()
+          : "Not set"}
+      </p>
+
       <Link to={`/edit/${habit.id}`}>
         <button className="edit-btn">Edit</button>
       </Link>

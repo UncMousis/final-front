@@ -7,6 +7,7 @@ import EditHabit from "./pages/EditHabit";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import WeatherPage from "./pages/WeatherPage";
+import Footer from "./components/Footer";
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
   };
 
   return (
+    <div className="app-wrapper">
     <Router>
       <nav>
         <Link to="/">Home</Link>
@@ -43,7 +45,10 @@ function App() {
           <Route path="/weather" element={<WeatherPage />} />
         </Routes>
       </main>
+
+      <Footer />
     </Router>
+    </div>
   );
 }
 
