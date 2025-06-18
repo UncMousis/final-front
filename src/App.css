@@ -1,42 +1,250 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Reset default spacing */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #0077cc;  /* ✅ Blue background */
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  z-index: 100;
+}
+
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;              /* ✅ White text */
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #cce6ff;            /* Slightly lighter on hover */
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 20px;
+  background-color: transparent;
+}
+
+/* Form Elements */
+form input,
+form select,
+form button {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form input[type="text"],
+form select {
+  width: 250px;
+}
+
+form button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #005fa3;
+}
+
+/* Habit Card */
+.habit-card {
+  background-color: #fff;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.habit-card h3 {
+  margin: 0 0 10px 0;
+}
+
+.habit-card button {
+  margin-right: 10px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.center-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; /* 60% of viewport height */
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.progress-container {
+  margin: 20px 0;
+  text-align: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.progress-bar {
+  background-color: #e0e0e0;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.progress-fill {
+  height: 100%;
+  background-color: #28a745; /* green */
+  transition: width 0.4s ease-in-out;
 }
 
-.card {
-  padding: 2em;
+form input,
+form select,
+form button {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;     /* ✅ White background */
+  color: #333;                /* ✅ Dark text */
 }
 
-.read-the-docs {
+.about-box {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 40px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.about-box h1 {
+  text-align: center;
+  color: #0077cc;
+  margin-bottom: 20px;
+}
+
+.about-box p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.contact-box {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 40px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.contact-box h1 {
+  text-align: center;
+  color: #0077cc;
+  margin-bottom: 20px;
+}
+
+.contact-box ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
+}
+
+.contact-box li {
+  margin-bottom: 10px;
+}
+
+.contact-footer {
+  margin-top: 20px;
+  font-style: italic;
   color: #888;
+  text-align: center;
 }
+
+.weather-box {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 40px;
+  text-align: center;
+  color: #444;
+}
+
+.home-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 40px;
+  line-height: 1.6;
+}
+
+.dashboard-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.form-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.centered-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
