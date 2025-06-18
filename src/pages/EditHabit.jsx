@@ -7,6 +7,7 @@ function EditHabit() {
 
   const [title, setTitle] = useState("");
   const [completed, setCompleted] = useState(false);
+  const [targetDate, setTargetDate] = useState(""); // ✅ new state
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
@@ -19,6 +20,7 @@ function EditHabit() {
       .then(data => {
         setTitle(data.title);
         setCompleted(data.completed);
+        setTargetDate(data.target_date?.slice(0, 10)); // ✅ convert to YYYY-MM-DD
         setLoading(false);
       })
       .catch(err => {
@@ -33,6 +35,7 @@ function EditHabit() {
     const updatedHabit = {
       title,
       completed,
+      targetDate, // ✅ include this in payload
     };
 
     fetch(`http://localhost:4000/api/habits/${id}`, {
@@ -68,6 +71,14 @@ function EditHabit() {
             onChange={(e) => setTitle(e.target.value)}
             required
             style={{ padding: "8px", width: "250px" }}
+          />
+          <br /><br />
+
+          <input
+            type="date"
+            value={targetDate}
+            onChange={(e) => setTargetDate(e.target.value)}
+            required
           />
           <br /><br />
 
